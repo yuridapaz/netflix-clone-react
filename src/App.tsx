@@ -1,12 +1,12 @@
 import React from 'react';
 import TextInput from './components/textInput';
+import MovieCard from './components/movieCard';
+import NavBar from './components/navBar';
 
 function App() {
   return (
     <>
-      <h1>New Site</h1>
-      <h6>button test</h6>
-      <div className="flex flex-col w-full gap-6 bg-slate-200 p-6"></div>
+      <NavBar />
     </>
   );
 }
