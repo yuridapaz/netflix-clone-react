@@ -5,10 +5,11 @@ import Button from '../button';
 
 const MainComponent = () => {
   const [movieList, setMovieList] = useState([]);
-
   const currentMovie = movieList[Math.floor(Math.random() * movieList.length)];
-
-  console.log(currentMovie);
+  const truncateString = (str, size) => {
+    if (str?.length > size) return str.slice(0, size) + '...';
+    return str;
+  };
 
   useEffect(() => {
     const getMovieData = async () => {
@@ -36,6 +37,10 @@ const MainComponent = () => {
               Watch Later
             </Button>
           </div>
+          <p className="text-sm text-gray-400"> Released: {currentMovie?.release_date} </p>
+          <p className="w-full py-2 text-gray-200 md:max-w-[70%] md:text-lg lg:max-w-[50%] xl:max-w-[35%]">
+            {truncateString(currentMovie?.overview, 200)}
+          </p>
         </div>
       </div>
     </div>
