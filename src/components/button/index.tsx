@@ -18,9 +18,9 @@ const buttonVariants = cva('transition-all m-auto cursor-pointer', {
       red: 'bg-red-600 text-white rounded-md hover:bg-red-600/90',
     },
     size: {
-      small: 'p-2',
-      medium: 'p-3',
-      large: 'p-4',
+      small: 'py-2 px-5',
+      medium: 'py-3 px-6',
+      large: 'py-4 px-7',
     },
     bold: {
       true: 'font-bold',

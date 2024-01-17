@@ -4,6 +4,8 @@ import requests from '../../utils/request';
 import axios from 'axios';
 
 const Home = () => {
+  useEffect(() => {}, []);
+
   return (
     <div className="h-full min-h-screen w-full">
       <MainComponent />
