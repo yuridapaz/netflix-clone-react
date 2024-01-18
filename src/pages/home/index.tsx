@@ -26,7 +26,9 @@ const Home = () => {
   return (
     <div className="h-full min-h-screen w-full">
       <MainComponent />
-      <RowComponent fetchURL={requests.popularMovies} rowTitle={'Popular Movies'} />
+      <RowComponent rowID="1" fetchURL={requests.popularMovies} rowTitle={'Popular Movies'} />
+      <RowComponent rowID="2" fetchURL={requests.topRatedMovies} rowTitle={'Top Rated Movies'} />
+      <RowComponent rowID="3" fetchURL={requests.upcomingMovies} rowTitle={'Upcoming Movies'} />
     </div>
   );
 };
