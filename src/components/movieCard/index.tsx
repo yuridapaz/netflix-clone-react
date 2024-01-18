@@ -4,7 +4,7 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa';
 const MovieCard = ({ movie }) => {
   const like = false;
   return (
-    <div className="relative inline-block w-[160px] cursor-pointer sm:w-[200px] md:w-[240px] lg:w-[280px]">
+    <div className="relative inline-block w-[160px] cursor-pointer p-2 sm:w-[200px] md:w-[240px] lg:w-[280px]">
       <img
         src={`https://image.tmdb.org/t/p/w500/${movie?.backdrop_path}`}
         alt={movie?.title}
