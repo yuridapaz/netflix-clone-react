@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import MainComponent from '../../components/main';
 import MovieCard from '../../components/movieCard';
+import RowComponent from '../../components/rowComponent';
+import requests from '../../utils/request';
 
 const filme = {
   adult: false,
@@ -24,10 +26,7 @@ const Home = () => {
   return (
     <div className="h-full min-h-screen w-full">
       <MainComponent />
-      <h1>oi</h1>
-      <MovieCard movie={filme} />
-      <MovieCard movie={filme} />
-      <MovieCard movie={filme} />
+      <RowComponent fetchURL={requests.popularMovies} rowTitle={'Popular Movies'} />
     </div>
   );
 };
