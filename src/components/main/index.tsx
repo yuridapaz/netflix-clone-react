@@ -1,12 +1,22 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import requests from '../../utils/request';
 import Button from '../button';
+
+type MovieListDataType = {};
+
+type MainComponentProps = {
+  // movieList: ;
+  // setMovieList: Dispatch<SetStateAction<MovieListDataType | undefined>>;
+  // currentMovie: ;
+  // truncateString: (str: string, size: number) => Promise<string>;
+};
 
 const MainComponent = () => {
   const [movieList, setMovieList] = useState([]);
   const currentMovie = movieList[Math.floor(Math.random() * movieList.length)];
-  const truncateString = (str, size) => {
+
+  const truncateString = (str: string, size: number) => {
     if (str?.length > size) return str.slice(0, size) + '...';
     return str;
   };
