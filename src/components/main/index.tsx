@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import requests from '../../utils/request';
 import Button from '../button';
 import { MovieDataType } from '../../types/types';

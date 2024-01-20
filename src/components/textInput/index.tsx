@@ -1,7 +1,7 @@
 import { VariantProps, cva } from 'class-variance-authority';
 import React, { FC, InputHTMLAttributes } from 'react';
 
-type textInputProps = VariantProps<typeof textInputVariants> &
+type TextInputProps = VariantProps<typeof textInputVariants> &
   Pick<InputHTMLAttributes<HTMLInputElement>, 'placeholder' | 'className' | 'id' | 'onChange'> & {
     register?: any;
     'data-testid'?: string;
@@ -28,7 +28,7 @@ const textInputVariants = cva('m-auto rounded-md text-sm outline-none', {
   },
 });
 
-const TextInput: FC<textInputProps> = ({
+const TextInput = ({
   placeholder,
   className,
   id,
@@ -37,7 +37,7 @@ const TextInput: FC<textInputProps> = ({
   variant,
   size,
   fullWidth,
-}) => {
+}: TextInputProps) => {
   return (
     <input
       type="text"

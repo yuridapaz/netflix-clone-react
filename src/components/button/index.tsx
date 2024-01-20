@@ -1,7 +1,7 @@
 import { VariantProps, cva } from 'class-variance-authority';
-import React, { ButtonHTMLAttributes, FC } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-type buttonProps = VariantProps<typeof buttonVariants> &
+type ButtonProps = VariantProps<typeof buttonVariants> &
   Pick<
     ButtonHTMLAttributes<HTMLButtonElement>,
     'disabled' | 'onClick' | 'children' | 'className'
@@ -32,7 +32,7 @@ const buttonVariants = cva('transition-all m-auto cursor-pointer', {
   },
 });
 
-const Button: FC<buttonProps> = ({
+const Button = ({
   disabled,
   onClick,
   children,
@@ -41,7 +41,7 @@ const Button: FC<buttonProps> = ({
   variant,
   size,
   bold,
-}) => {
+}: ButtonProps) => {
   return (
     <button
       disabled={disabled}

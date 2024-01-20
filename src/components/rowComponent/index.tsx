@@ -1,10 +1,17 @@
 import axios from 'axios';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import MovieCard from '../movieCard';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { MovieDataType } from '../../types/types';
 
-const RowComponent = ({ rowID, rowTitle, fetchURL }) => {
-  const [movies, setMovies] = useState([]);
+type RowComponentProps = {
+  rowID: string;
+  rowTitle: string;
+  fetchURL: string;
+};
+
+const RowComponent = ({ rowID, rowTitle, fetchURL }: RowComponentProps) => {
+  const [movies, setMovies] = React.useState<MovieDataType[]>([]);
   const ref = useRef<HTMLInputElement>();
 
   useEffect(() => {
@@ -33,8 +40,8 @@ const RowComponent = ({ rowID, rowTitle, fetchURL }) => {
           className="no-scrollbar relative h-full w-full overflow-scroll scroll-smooth whitespace-nowrap  pl-2 md:pl-6"
           ref={ref}
         >
-          {movies.map((movie, id) => (
-            <MovieCard movie={movie} key={id} />
+          {movies.map((movie: MovieDataType, i: number) => (
+            <MovieCard movie={movie} key={i} />
           ))}
         </div>
         <MdChevronRight

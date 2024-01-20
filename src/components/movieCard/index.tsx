@@ -1,7 +1,12 @@
 import React from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { MovieDataType } from '../../types/types';
 
-const MovieCard = ({ movie }) => {
+type MovieCardProps = {
+  movie: MovieDataType;
+};
+
+const MovieCard = ({ movie }: MovieCardProps) => {
   const like = false;
   return (
     <div className="relative inline-block w-[160px] cursor-pointer p-2  sm:w-[200px] md:w-[240px] lg:w-[280px]">
