@@ -31,12 +31,12 @@ const MainComponent = () => {
   }, []);
 
   return (
-    <div className="h-[550px] w-full text-white">
+    <div className="h-[550px] w-full text-white  md:h-[600px] lg:h-[650px]">
       <div className="h-full w-full">
-        <div className="absolute h-[550px] w-full bg-gradient-to-r from-black"></div>
+        <div className=" absolute h-[550px] w-full bg-gradient-to-r from-black md:h-[600px] lg:h-[650px]"></div>
         <img
           className="h-full w-full object-cover"
-          src={`https://image.tmdb.org/t/p/original${currentMovie?.poster_path}`}
+          src={`https://image.tmdb.org/t/p/original/${currentMovie?.backdrop_path}`}
           alt={currentMovie?.title}
         />
         <div className="absolute top-[20%] w-full p-4 md:p-8">
