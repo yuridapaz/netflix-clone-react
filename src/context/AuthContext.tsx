@@ -7,16 +7,28 @@ import {
   onAuthStateChanged,
 } from 'firebase/auth';
 
-const AuthContext = createContext([]);
+interface IUser {
+  email: string;
+  password: string;
+}
+
+type AuthContextType = {
+  setUser: React.Dispatch<React.SetStateAction<IUser>>;
+  signUp: (email: string, password: string) => Promise<void>;
+  logIn: (email: string, password: string) => Promise<void>;
+  logOut: () => Promise<void>;
+};
+
+const AuthContext = React.createContext<AuthContextType | {}>({});
 
 export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = React.useState<IUser | {}>({});
 
-  const signUp = (email, password) => {
+  const signUp = (email: string, password: string) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const logIn = (email, password) => {
+  const logIn = (email: string, password: string) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
   const logOut = () => {

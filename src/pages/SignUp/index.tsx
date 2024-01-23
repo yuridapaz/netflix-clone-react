@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TextInput from '../../components/textInput';
 import Button from '../../components/button';
 import { Link } from 'react-router-dom';
+import { UserAuth } from '../../context/AuthContext';
 
 const SignupPage = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { user, signUp } = UserAuth();
+
   return (
     <div className="h-screen w-full">
       <img
