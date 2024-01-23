@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
 import TextInput from '../../components/textInput';
 import Button from '../../components/button';
-import { Link } from 'react-router-dom';
-import { UserAuth } from '../../context/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContextType, UserAuth } from '../../context/AuthContext';
 
 const SignupPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const { user, signUp } = UserAuth();
+  const [email, setEmail] = React.useState<string>('');
+  const [password, setPassword] = React.useState<string>('');
+  const { signUp } = UserAuth() as AuthContextType;
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      await signUp(email, password);
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="h-screen w-full">
@@ -21,13 +32,19 @@ const SignupPage = () => {
         <div className="mx-auto h-[600px] max-w-[450px] bg-black/75 text-white ">
           <div className="mx-auto max-w-[320px] py-16">
             <h1 className="text-3xl font-bold"> Sign Up </h1>
-            <form action="" className="flex w-full flex-col gap-6 py-8">
-              <TextInput fullWidth type="email" placeholder="Email" />
+            <form action="" className="flex w-full flex-col gap-6 py-8" onSubmit={handleSubmit}>
+              <TextInput
+                fullWidth
+                type="email"
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
               <TextInput
                 fullWidth
                 type="password"
                 placeholder="Password"
                 autoComplete="current-password"
+                onChange={(e) => setPassword(e.target.value)}
               />
               <Button variant="red" fullWidth>
                 Sign Up

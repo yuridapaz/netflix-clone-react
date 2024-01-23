@@ -12,16 +12,21 @@ interface IUser {
   password: string;
 }
 
-type AuthContextType = {
+export type AuthContextType = {
+  user: IUser;
   setUser: React.Dispatch<React.SetStateAction<IUser>>;
   signUp: (email: string, password: string) => Promise<void>;
   logIn: (email: string, password: string) => Promise<void>;
   logOut: () => Promise<void>;
 };
 
-const AuthContext = React.createContext<AuthContextType | {}>({});
+type ContextProps = {
+  children: string | JSX.Element | JSX.Element[];
+};
 
-export const AuthContextProvider = ({ children }) => {
+export const AuthContext = React.createContext<AuthContextType | {}>({});
+
+export const AuthContextProvider = ({ children }: ContextProps) => {
   const [user, setUser] = React.useState<IUser | {}>({});
 
   const signUp = (email: string, password: string) => {
