@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ErrorPage from './pages/errorPage/index';
-import Home from './pages/home/index.js';
+import ErrorPage from './pages/ErrorPage/index';
 import AuthContextProvider from './context/AuthContext.js';
+import HomePage from './pages/Home/index.js';
+import LoginPage from './pages/Login/index.js';
+import SignupPage from './pages/SignUp/index.js';
+import AccountPage from './pages/Account/index.js';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +18,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: <HomePage />,
+      },
+      {
+        path: '/login',
+        element: <LoginPage />,
+      },
+      {
+        path: '/signup',
+        element: <SignupPage />,
+      },
+      {
+        path: '/account',
+        element: <AccountPage />,
       },
     ],
   },

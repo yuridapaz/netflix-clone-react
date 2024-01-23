@@ -3,7 +3,7 @@ import MainComponent from '../../components/main';
 import RowComponent from '../../components/rowComponent';
 import requests from '../../utils/request';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div className="h-full min-h-screen w-full">
       <MainComponent />
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

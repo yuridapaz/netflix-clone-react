@@ -25,6 +25,9 @@ const buttonVariants = cva('transition-all m-auto cursor-pointer', {
     bold: {
       true: 'font-bold',
     },
+    fullWidth: {
+      true: 'w-full',
+    },
   },
   defaultVariants: {
     variant: 'primary',
@@ -41,12 +44,13 @@ const Button = ({
   variant,
   size,
   bold,
+  fullWidth,
 }: ButtonProps) => {
   return (
     <button
       disabled={disabled}
       onClick={onClick}
-      className={buttonVariants({ variant, size, bold, className })}
+      className={buttonVariants({ variant, size, bold, className, fullWidth })}
       data-testid={dataTestId}
     >
       {children}

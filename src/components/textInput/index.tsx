@@ -2,7 +2,10 @@ import { VariantProps, cva } from 'class-variance-authority';
 import React, { FC, InputHTMLAttributes } from 'react';
 
 type TextInputProps = VariantProps<typeof textInputVariants> &
-  Pick<InputHTMLAttributes<HTMLInputElement>, 'placeholder' | 'className' | 'id' | 'onChange'> & {
+  Pick<
+    InputHTMLAttributes<HTMLInputElement>,
+    'placeholder' | 'className' | 'id' | 'onChange' | 'type' | 'autoComplete'
+  > & {
     register?: any;
     'data-testid'?: string;
   };
@@ -10,7 +13,7 @@ type TextInputProps = VariantProps<typeof textInputVariants> &
 const textInputVariants = cva('m-auto rounded-md text-sm outline-none', {
   variants: {
     variant: {
-      primary: 'bg-slate-500 text-white placeholder:text-slate-300',
+      primary: 'bg-slate-700 text-white placeholder:text-slate-300',
       secondary: 'bg-white text-black',
     },
     size: {
@@ -37,17 +40,16 @@ const TextInput = ({
   variant,
   size,
   fullWidth,
-}: TextInputProps) => {
-  return (
-    <input
-      type="text"
-      id={id}
-      placeholder={placeholder}
-      onChange={onChange}
-      data-testid={dataTestId}
-      className={textInputVariants({ variant, size, fullWidth, className })}
-    />
-  );
-};
+  type,
+}: TextInputProps) => (
+  <input
+    type={type}
+    id={id}
+    placeholder={placeholder}
+    onChange={onChange}
+    data-testid={dataTestId}
+    className={textInputVariants({ variant, size, fullWidth, className })}
+  />
+);
 
 export default TextInput;
