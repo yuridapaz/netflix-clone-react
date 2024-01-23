@@ -22,6 +22,7 @@ const router = createBrowserRouter([
   //TODO: Sign in
   //TODO: Sign up
   //TODO: Movie Description ? Maybe an modal.
+  //TODO: Movie Page and TV Show Page
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

@@ -15,7 +15,7 @@ const buttonVariants = cva('transition-all m-auto cursor-pointer', {
       primary: 'bg-none text-white',
       secondary: 'bg-white text-black hover:bg-white/90',
       outline: 'bg-none text-gray-300 outline outline-1 outline-gray-300',
-      red: 'bg-red-600 text-white rounded-md hover:bg-red-600/90',
+      red: 'bg-red-600 text-white rounded-md hover:bg-red-700',
     },
     size: {
       small: 'py-2 px-5',

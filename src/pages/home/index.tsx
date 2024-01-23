@@ -1,6 +1,5 @@
 import React from 'react';
 import MainComponent from '../../components/main';
-
 import RowComponent from '../../components/rowComponent';
 import requests from '../../utils/request';
 

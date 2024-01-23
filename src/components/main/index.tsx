@@ -23,9 +23,9 @@ const MainComponent = () => {
   }, []);
 
   return (
-    <div className="h-[550px] w-full text-white  md:h-[600px] lg:h-[650px]">
+    <div className="h-[550px] w-full text-white  md:h-[600px] lg:h-[680px]">
       <div className="h-full w-full">
-        <div className=" absolute h-[550px] w-full bg-gradient-to-r from-black md:h-[600px] lg:h-[650px]"></div>
+        <div className=" absolute h-[550px] w-full bg-gradient-to-r from-black md:h-[600px] lg:h-[680px]"></div>
         <img
           className="h-full w-full object-cover"
           src={`https://image.tmdb.org/t/p/original/${currentMovie?.backdrop_path}`}
