@@ -9,6 +9,7 @@ import HomePage from './pages/Home/index.js';
 import LoginPage from './pages/Login/index.js';
 import SignupPage from './pages/SignUp/index.js';
 import AccountPage from './pages/Account/index.js';
+import ProtectedRoute from './components/protectedRoute/index.js';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/account',
-        element: <AccountPage />,
+        element: <ProtectedRoute children={<AccountPage />} />,
       },
     ],
   },

@@ -1,6 +1,6 @@
 import { VariantProps } from 'class-variance-authority';
 import React, { ButtonHTMLAttributes } from 'react';
-import buttonVariants from './const.js';
+import { buttonVariants } from './const.js';
 
 type ButtonProps = VariantProps<typeof buttonVariants> &
   Pick<
