@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react';
 import requests from '../../utils/request';
 import Button from '../button';
-import { MovieDataType } from '../../types/types';
+import { MovieDataType } from '../../types/MovieDataType';
 
 const MainComponent = () => {
   const [movieList, setMovieList] = React.useState<MovieDataType[]>([]);

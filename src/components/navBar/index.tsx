@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from '../button';
-import { AuthContextType, UserAuth } from '../../context/AuthContext';
+import { UserAuth } from '../../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthContextType } from '../../types/AuthContextType';
 
 const NavBar = () => {
   const { user, logOut } = UserAuth() as AuthContextType;

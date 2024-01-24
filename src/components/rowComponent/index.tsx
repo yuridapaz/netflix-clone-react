@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import MovieCard from '../movieCard';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import { MovieDataType } from '../../types/types';
+import { MovieDataType } from '../../types/MovieDataType';
 
 type RowComponentProps = {
   rowID: string;

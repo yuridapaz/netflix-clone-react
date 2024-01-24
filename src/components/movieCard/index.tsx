@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
-import { MovieDataType } from '../../types/types';
+import { MovieDataType } from '../../types/MovieDataType';
 
 type MovieCardProps = {
   movie: MovieDataType;

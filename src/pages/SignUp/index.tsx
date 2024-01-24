@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import TextInput from '../../components/textInput';
 import Button from '../../components/button';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContextType, UserAuth } from '../../context/AuthContext';
+import { UserAuth } from '../../context/AuthContext';
+import { AuthContextType } from '../../types/AuthContextType';
 
 const SignupPage = () => {
   const [email, setEmail] = React.useState<string>('');

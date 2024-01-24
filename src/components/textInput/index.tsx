@@ -1,5 +1,6 @@
 import { VariantProps, cva } from 'class-variance-authority';
-import React, { FC, InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes } from 'react';
+import { textInputVariants } from './const.js';
 
 type TextInputProps = VariantProps<typeof textInputVariants> &
   Pick<
@@ -9,27 +10,6 @@ type TextInputProps = VariantProps<typeof textInputVariants> &
     register?: any;
     'data-testid'?: string;
   };
-
-const textInputVariants = cva('m-auto rounded-md text-sm outline-none', {
-  variants: {
-    variant: {
-      primary: 'bg-slate-700 text-white placeholder:text-slate-300',
-      secondary: 'bg-white text-black',
-    },
-    size: {
-      small: 'p-2',
-      medium: 'p-3',
-      large: 'p-4',
-    },
-    fullWidth: {
-      true: 'w-full',
-    },
-  },
-  defaultVariants: {
-    variant: 'primary',
-    size: 'medium',
-  },
-});
 
 const TextInput = ({
   placeholder,
