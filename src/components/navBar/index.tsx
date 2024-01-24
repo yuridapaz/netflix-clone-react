@@ -18,9 +18,9 @@ const NavBar = () => {
   };
 
   return (
-    <div className="absolute z-[100] flex w-full items-center justify-between p-4 md:px-8">
+    <div className=" absolute z-[100] flex w-full items-center justify-between p-4 md:px-8">
       <Link to="/">
-        <h1 className="cursor-pointer text-4xl font-normal uppercase text-red-600">Netflix</h1>
+        <h1 className=" cursor-pointer text-4xl font-normal uppercase text-red-600">Netflix</h1>
       </Link>
       {user?.email ? (
         <div className="flex gap-4">

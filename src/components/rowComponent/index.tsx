@@ -37,11 +37,11 @@ const RowComponent = ({ rowID, rowTitle, fetchURL }: RowComponentProps) => {
 
         <div
           id={`slider` + rowID}
-          className="no-scrollbar relative h-full w-full overflow-scroll scroll-smooth whitespace-nowrap  pl-2 md:pl-6"
+          className="no-scrollbar relative w-full overflow-scroll scroll-smooth whitespace-nowrap pl-2 md:pl-6"
           ref={ref}
         >
           {movies.map((movie: MovieDataType, i: number) => (
-            <MovieCard movie={movie} key={i} />
+            <MovieCard movie={movie} key={i} index={i} />
           ))}
         </div>
         <MdChevronRight
